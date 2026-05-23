@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Next Level Roadmap</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>Next Level Roadmap</h1>
+    <p>Softball Recruiting Planner (expandable to all sports)</p>
+  </header>
+
+  <main class="app-container">
+    <section id="home" class="view active">
+      <h2>Home Dashboard</h2>
+      <div class="card-grid">
+        <article class="card">
+          <h3>Profile Snapshot</h3>
+          <div id="snapshot"></div>
+          <div class="progress-wrap">
+            <label>Progress</label>
+            <div class="progress"><div id="progressBar"></div></div>
+            <small id="progressText">0%</small>
+          </div>
+        </article>
+        <article class="card">
+          <h3>Weekly Recommended Action</h3>
+          <p id="weeklyAction">Complete your profile to get guidance.</p>
+        </article>
+        <article class="card">
+          <h3>Next 3 Tasks</h3>
+          <ul id="nextTasks"></ul>
+        </article>
+        <article class="card">
+          <h3>Alerts & Reminders</h3>
+          <ul id="alerts"></ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="profile" class="view">
+      <h2>Saved Athlete Profile</h2>
+      <form id="profileForm" class="form-grid"></form>
+      <button class="btn-primary" id="saveProfileBtn" type="button">Save Profile</button>
+    </section>
+
+    <section id="roadmap" class="view">
+      <h2>Grade-Based Roadmap</h2>
+      <select id="roadmapGrade" class="full-width"></select>
+      <div id="roadmapContent" class="card"></div>
+    </section>
+
+    <section id="rules" class="view">
+      <h2>Eligibility & Recruiting Rules</h2>
+      <article class="card">
+        <h3>State Eligibility (All 50 States)</h3>
+        <select id="stateRulesSelect" class="full-width"></select>
+        <div id="stateRuleCard"></div>
+      </article>
+      <article class="card" id="recruitingRules"></article>
+      <p class="disclaimer">This app provides guidance only. Always verify current rules with NCAA, NAIA, NJCAA, your state athletic association, school district, and the college program.</p>
+    </section>
+
+    <section id="contact" class="view">
+      <h2>Coach Contact Center</h2>
+      <article class="card">
+        <h3>Email Template Generator</h3>
+        <select id="templateType" class="full-width">
+          <option value="intro">Coach email template</option>
+          <option value="followup">Follow-up email template</option>
+          <option value="schedule">Tournament schedule message</option>
+          <option value="camp">Camp introduction message</option>
+          <option value="thanks">Thank-you message</option>
+        </select>
+        <textarea id="templateOutput" rows="8"></textarea>
+      </article>
+      <article class="card">
+        <h3>Contact Log</h3>
+        <form id="contactForm" class="form-grid compact"></form>
+        <button class="btn-primary" id="addContactBtn" type="button">Add Contact</button>
+        <div id="contactList"></div>
+      </article>
+    </section>
+
+    <section id="video" class="view">
+      <h2>Video Builder</h2>
+      <select id="videoRole" class="full-width"></select>
+      <div id="videoChecklist" class="card"></div>
+    </section>
+
+    <section id="targets" class="view">
+      <h2>College Target List</h2>
+      <form id="targetForm" class="form-grid compact"></form>
+      <button class="btn-primary" id="addTargetBtn" type="button">Add School</button>
+      <div id="targetList"></div>
+    </section>
+
+    <section id="parent" class="view">
+      <h2>Parent Dashboard</h2>
+      <div id="parentDashboard" class="card-grid"></div>
+    </section>
+
+    <section id="coach" class="view">
+      <h2>Coach Dashboard</h2>
+      <div id="coachDashboard" class="card-grid"></div>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <button data-view="home">Home</button>
+    <button data-view="profile">Profile</button>
+    <button data-view="roadmap">Roadmap</button>
+    <button data-view="rules">Rules</button>
+    <button data-view="contact">Contact</button>
+    <button data-view="video">Video</button>
+    <button data-view="targets">Targets</button>
+    <button data-view="parent">Parent</button>
+    <button data-view="coach">Coach</button>
+  </nav>
+
+  <script src="app.js"></script>
+</body>
+</html>
